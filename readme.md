@@ -1,3 +1,3 @@
 ### Emacs config
 
-`git clone --recursive https://github.com/pancakem/.emacs.d.git`
+`git clone https://github.com/pancakem/.emacs.d.git`
