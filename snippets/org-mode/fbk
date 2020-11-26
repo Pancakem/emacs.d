@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: beamer framebreak
+# key: fbk
+# --
+***                                                         :B_ignoreheading:
+    :PROPERTIES:
+    :BEAMER_env: ignoreheading
+    :END:
+    #+beamer: \framebreak
+
+$0

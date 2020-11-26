@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: document
+# key: doc
+# --
+
+#+setupfile: /home/rafael/Dropbox/org/reading-notes/options.org
+
+$0
+
+* dummy
+
+[[bibliographystyle:alpha]]
+[[bibliography:/home/rafael/Dropbox/texmf/bibtex/bib/misc/rvf.bib]]
+
+
+* COMMENT Local Variables
+
+
+# Local variables:
+# org-confirm-babel-evaluate: nil
+# eval: (org-babel-lob-ingest "/home/rafael/Dropbox/org/reading-notes/options.org")
+# eval: (org-sbe filter)
+# End:

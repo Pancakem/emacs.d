@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: lemma
+# key: lem
+# --
+*** Lemma                                                           :B_lemma:
+    :PROPERTIES:
+    :BEAMER_env: lemma
+    :CUSTOM_ID: lemma-$1
+    :END:
+    #+beamer: \label{lemma-$1}

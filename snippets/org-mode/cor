@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: corollary
+# key: cor
+# --
+*** Corollary                                                   :B_corollary:
+    :PROPERTIES:
+    :BEAMER_env: corollary
+    :CUSTOM_ID: corollary-$1
+    :END:
+    #+beamer: \label{corollary-$1}

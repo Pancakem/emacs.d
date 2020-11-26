@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: label in beamer
+# key: lab
+# --
+#+beamer: \label{$1}
+$0
