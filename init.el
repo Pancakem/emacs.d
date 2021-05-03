@@ -2,6 +2,12 @@
 ;; we need it for the function 'case' in the 'by-backend' macro
 (require 'cl-lib)
 
+;; disable stuff
+(menu-bar-mode -1)
+(toggle-scroll-bar -1)
+(tool-bar-mode -1)
+(global-auto-revert-mode t)
+
 ;; taking ideas from https://github.com/jkitchin/scimax
 ;;
 (defconst my-emacs-dir (file-name-directory (or load-file-name (buffer-file-name)))
@@ -10,7 +16,10 @@
 (defvar my-emacs-personal-dir (expand-file-name "personal" my-emacs-dir)
   "Personal directory for personal code.")
 
-(setq user-emacs-directory my-emacs-dir)
+(setq user-emacs-directory "~/Documents")
+
+(defun ido-kill-emacs-hook ()
+      (ignore-errors (ido-save-history)))
 
 (setq package-user-dir (expand-file-name "elpa"  my-emacs-dir))
 
@@ -29,3 +38,4 @@
   (package-install 'org-plus-contrib))
 
 (org-babel-load-file  (expand-file-name "config.org" my-emacs-dir))
+(put 'upcase-region 'disabled nil)
