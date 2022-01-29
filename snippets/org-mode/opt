@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: options
-# key: opt
-# --
-#+options: $1

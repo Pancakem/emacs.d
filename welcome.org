@@ -1,5 +1,0 @@
-#+title: Emacs for all
-
-Sentences such as "You shouldn't steal", or "We should prevent
-children from suffering needlessly" seem to have meaning, but they
-refer to nothing.
