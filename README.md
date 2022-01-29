@@ -1,0 +1,1 @@
+# Pancakem's Emacs configuration
