@@ -634,6 +634,26 @@
   (add-hook 'c-mode-hook 'clang-format-on-save)
   (add-hook 'c++-mode-hook 'clang-format-on-save))
 
+;; Elm
+(use-package elm-mode
+  :ensure t
+  :config
+  (setq elm-mode-hook '(elm-indent-simple-mode))
+  (add-hook 'elm-mode-hook 'elm-format-on-save-mode)
+  )
+
+;; Rust
+(use-package rust-mode
+  :ensure t
+  :config
+  (add-hook 'rust-mode-hook
+            (lambda () (setq indent-tabs-mode nil)))
+  (setq rust-format-on-save t))
+
+;; Go
+(use-package go-mode
+  :ensure t)
+
 ;; Lua
 (use-package lua-mode
   :ensure t
@@ -751,6 +771,15 @@
 ;; YAML
 (use-package yaml-mode
   :ensure t)
+
+;; Arduino
+(use-package arduino-cli-mode
+  :ensure t
+  :custom
+  (arduino-cli-warnings 'all)
+  (arduino-cli-verify t))
+
+(add-to-list 'auto-minor-mode-alist '("\\.ino\\'" . arduino-cli-mode))
 
 ;; Fonts setting
 (when (fboundp 'set-fontset-font)
