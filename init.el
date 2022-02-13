@@ -654,6 +654,12 @@
 (use-package go-mode
   :ensure t)
 
+;; Python
+(use-package python-black
+  :ensure t
+  :after python
+  :hook (python-mode . python-black-on-save-mode))
+
 ;; Lua
 (use-package lua-mode
   :ensure t
