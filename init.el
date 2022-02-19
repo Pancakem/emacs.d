@@ -654,6 +654,12 @@
 (use-package go-mode
   :ensure t)
 
+(add-hook 'go-mode-hook
+          (lambda ()
+            (add-hook 'before-save-hook 'gofmt-before-save)
+            (setq tab-width 4)
+            (setq ident-tabs-mode 1)))
+
 ;; Python
 (use-package python-black
   :ensure t
