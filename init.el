@@ -800,23 +800,6 @@
   (arduino-cli-warnings 'all)
   (arduino-cli-verify t))
 
-(add-to-list 'auto-minor-mode-alist '("\\.ino\\'" . arduino-cli-mode))
-
-;; Fonts setting
-(when (fboundp 'set-fontset-font)
-  (when (eq system-type 'windows-nt)
-    ;; https://files.ax86.net/terminus-ttf/
-    (set-face-attribute 'default nil :font "Terminus (TTF) for Windows" :height 120)
-    (set-fontset-font t 'han "SimSun")
-    (set-fontset-font t 'han "SimSun-ExtB" nil 'append))
-
-  (when (eq system-type 'darwin)
-    ;; brew install font-terminus
-    (set-face-attribute 'default nil :font "Terminus (TTF)" :height 140)
-    (set-fontset-font t 'han "STSong")
-    ;; Enable emoji, and stop the UI from freezing when trying to display them.
-    (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)))
-
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
