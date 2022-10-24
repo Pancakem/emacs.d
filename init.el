@@ -707,6 +707,12 @@
          ("\\.markdown\\'" . markdown-mode))
   :init (setq markdown-command "multimarkdown"))
 
+
+;; Docker
+(use-package dockerfile-mode
+  :ensure t
+  :mode (("Dockerfile\\'" . dockerfile-mode)))
+
 ;; Org-Mode
 (use-package org
   :init
@@ -799,6 +805,13 @@
   :custom
   (arduino-cli-warnings 'all)
   (arduino-cli-verify t))
+
+
+;; Static analysus
+(use-package flycheck-clang-analyzer
+  :ensure t
+  :after flycheck
+  :config (flycheck-clang-analyzer-setup))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
