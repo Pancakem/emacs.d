@@ -656,9 +656,8 @@
 
 (add-hook 'go-mode-hook
           (lambda ()
-            (add-hook 'before-save-hook 'gofmt-before-save)
-            (setq tab-width 4)
-            (setq ident-tabs-mode 1)))
+            (add-hook 'before-save-hook #'gofmt-before-save)
+            (setq-local tab-width 2 indent-tabs-mode t)))
 
 ;; Python
 (use-package python-black
@@ -697,6 +696,12 @@
   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode)))
+
+;; DTS
+(use-package dts-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\\.overlay?\\'" . dts-mode)))
 
 ;; Markdown
 (use-package markdown-mode
@@ -799,6 +804,11 @@
 (use-package yaml-mode
   :ensure t)
 
+(use-package editorconfig
+  :ensure t
+  :config
+  (editorconfig-mode 1))
+
 ;; Arduino
 (use-package arduino-cli-mode
   :ensure t
@@ -807,11 +817,20 @@
   (arduino-cli-verify t))
 
 
-;; Static analysus
+;; Static analysis
 (use-package flycheck-clang-analyzer
   :ensure t
   :after flycheck
   :config (flycheck-clang-analyzer-setup))
+
+;; (use-package android-dev
+;;   :after hydra
+;;   :bind (("C-c a" . hydra-android/body))
+;;   :config
+;;   (setq android-env-executable "./gradlew")
+;;   (setq android-env-test-command "connectedDevDebugAndroidTest")
+;;   (setq android-env-unut-test-command "testDevDebug")
+;;   (android-env))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
