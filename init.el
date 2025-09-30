@@ -817,20 +817,16 @@
   (arduino-cli-verify t))
 
 
+(use-package typst-ts-mode
+  :elpaca (:type git :host sourcehut :repo "meow_king/typst-ts-mode")
+  :custom
+  (typst-ts-mode-watch-options "--open"))
+
 ;; Static analysis
 (use-package flycheck-clang-analyzer
   :ensure t
   :after flycheck
   :config (flycheck-clang-analyzer-setup))
-
-;; (use-package android-dev
-;;   :after hydra
-;;   :bind (("C-c a" . hydra-android/body))
-;;   :config
-;;   (setq android-env-executable "./gradlew")
-;;   (setq android-env-test-command "connectedDevDebugAndroidTest")
-;;   (setq android-env-unut-test-command "testDevDebug")
-;;   (android-env))
 
 ;; config changes made through the customize UI will be stored here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
